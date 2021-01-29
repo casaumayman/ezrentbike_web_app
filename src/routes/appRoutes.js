@@ -6,46 +6,52 @@ import XeSo from 'pages/XeSo';
 import Feedback from 'pages/Feedback';
 import SearchResult from 'pages/SearchResult';
 import Sale from 'pages/Sale';
+import ProductEvent from 'pages/ProductEvent';
 
 export const appRouter = [
     {
         path: '/',
         component: HomePage,
-        exact: true
+        exact: true,
     },
     {
         path: '/about',
         component: About,
-        exact: false
+        exact: false,
     },
     {
         path: '/product/:id',
         component: DetailProduct,
-        exact: false
+        exact: false,
     },
     {
         path: '/xe-tay-ga',
         component: XeTayGa,
-        exact: false
+        exact: false,
     },
     {
         path: '/xe-so',
         component: XeSo,
-        exact: false
+        exact: false,
     },
     {
         path: '/feedback',
         component: Feedback,
-        exact: false
+        exact: false,
     },
     {
         path: '/search',
         component: SearchResult,
-        exact: false
+        exact: false,
     },
     {
         path: '/sale',
         component: Sale,
-        exact: false
-    }
-];
+        exact: true,
+    },
+    {
+        path: '/sale/product',
+        component: ProductEvent,
+        exact: false,
+    },
+]

@@ -7,6 +7,7 @@ import IndexAdmin from '../pages/IndexAdmin';
 import UserManager from '../pages/UserManager';
 import ProductManager from 'pages/ProductManager';
 import FeedbackManager from 'pages/FeedbackManager';
+import SaleManager from 'pages/SaleManager'
 
 const customLink = ({ to, label, exact, icon }, even, id) => {
     return (
@@ -119,24 +120,47 @@ class AdminLayout extends Component {
                 <MDBCard>
                     <MDBCardBody>
                         <div className="row" style={{ marginBottom: '20px' }}>
-                            <div className="col-md-12" style={{ textAlign: 'center', fontWeight: 'bold' }}>
-                                <a href="?thread=admin-ncp"><MDBIcon size="3x" icon="edit" /></a>
-                                <font face="Tahoma" size="5.9">THUÊ XE MÁY EZRENTBIKES - GIAO DIỆN QUẢN LÝ</font>
+                            <div
+                                className="col-md-12"
+                                style={{
+                                    textAlign: 'center',
+                                    fontWeight: 'bold',
+                                }}
+                            >
+                                <a href="?thread=admin-ncp">
+                                    <MDBIcon size="3x" icon="edit" />
+                                </a>
+                                <font face="Tahoma" size="5.9">
+                                    THUÊ XE MÁY EZRENTBIKES - GIAO DIỆN QUẢN LÝ
+                                </font>
                             </div>
                         </div>
                         <div className="row">
                             {this.state.routes.map((route, index) => (
                                 <div key={index} className="col-md-3">
-                                    {customLink({ to: route.path, label: route.label, exact: route.exact, icon: route.icon }, this.onClickHandle, index)}
+                                    {customLink(
+                                        {
+                                            to: route.path,
+                                            label: route.label,
+                                            exact: route.exact,
+                                            icon: route.icon,
+                                        },
+                                        this.onClickHandle,
+                                        index
+                                    )}
                                 </div>
                             ))}
                         </div>
                     </MDBCardBody>
                 </MDBCard>
-                <Route path="/manager" exact component={IndexAdmin}/>
-                <Route path="/manager/account-custommer" component={UserManager}/>
-                <Route path="/manager/product" component={ProductManager}/>
-                <Route path="/manager/feed-back" component={FeedbackManager}/>
+                <Route path="/manager" exact component={IndexAdmin} />
+                <Route
+                    path="/manager/account-custommer"
+                    component={UserManager}
+                />
+                <Route path="/manager/product" component={ProductManager} />
+                <Route path="/manager/feed-back" component={FeedbackManager} />
+                <Route path="/manager/sale" component={SaleManager} />
             </Fragment>
         )
     }
